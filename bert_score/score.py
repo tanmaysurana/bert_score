@@ -132,11 +132,11 @@ def score(
         all_layers=all_layers,
     ).cpu()
 
-    if ref_group_boundaries is not None:
-        max_preds = []
-        for beg, end in ref_group_boundaries:
-            max_preds.append(all_preds[beg:end].max(dim=0)[0])
-        all_preds = torch.stack(max_preds, dim=0)
+#     if ref_group_boundaries is not None:
+#         max_preds = []
+#         for beg, end in ref_group_boundaries:
+#             max_preds.append(all_preds[beg:end].max(dim=0)[0])
+#         all_preds = torch.stack(max_preds, dim=0)
 
     use_custom_baseline = baseline_path is not None
     if rescale_with_baseline:
